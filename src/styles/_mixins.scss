@@ -1,0 +1,30 @@
+@mixin flexboxCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@mixin flexAlignCenter {
+    display: flex;
+    align-items: center;
+}
+@mixin buttonSecondary {
+    padding: $base-padding - (0.3 * $base-padding);
+    background-color: $secondary-color;
+    border-radius: $base-border-radius;
+    font-size: $base-font-size - (0.2 * $base-font-size);
+    padding-left: $base-padding * 2;
+    padding-right: $base-padding * 2 ;
+    color: white;
+    cursor: pointer;
+    border: none
+}
+@mixin buttonPrimary {
+    @include buttonSecondary;
+    border: 1px solid $secondary-color;
+    background-color: transparent;
+    color: $secondary-color;
+    margin-left: 10px;
+    padding-left: $base-padding;
+    padding-right: $base-padding ;
+    
+}

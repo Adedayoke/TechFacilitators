@@ -1,0 +1,54 @@
+.navbar{
+    height: $base-font-size * 5;
+    background-color: $tertiary-color;
+    @include flexAlignCenter;
+    justify-content: space-between;
+    padding: $base-padding;
+    box-shadow: $box-shadow;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    .logoImg{
+        img{
+            width: $base-font-size * 16;
+        }
+    }
+    ul{
+        li{
+            list-style: none;
+            display: inline-block;
+            margin-right: $base-font-size * 1.25;
+            color: $secondary-color;
+            
+            a {
+                position: relative;
+                transition: all .5s;
+                &::before{
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    height: 1px;
+                    width: 100%;
+                    background-color: white;
+                    content: "";
+                    transform: translateX(-100%);
+                    opacity: 0;
+                    
+                }
+                &:hover::before {
+                    transform: translateX(0%);
+                    opacity: 1
+                }
+                &:hover {
+                    color: white
+                    
+                }
+            }
+        }
+    }
+    .buttons{
+        @include flexAlignCenter;
+        justify-content: space-between;
+    }
+}

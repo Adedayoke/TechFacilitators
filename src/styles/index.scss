@@ -1,0 +1,20 @@
+// variables and functions
+@import 'variables';
+
+// mixins
+@import 'mixins';
+ 
+// base & layout
+@import 'base';
+
+// colors
+@import 'colors';
+
+
+// components (button, card, navbar)
+@import 'styles_components/navbar';
+@import 'styles_components/button';
+@import 'styles_components/typing_text';
+@import 'styles_components/slider';
+
+// utilities (margin, padding, opacity)
