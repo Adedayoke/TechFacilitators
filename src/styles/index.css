@@ -56,6 +56,11 @@ img {
   margin-right: 1.25rem;
   color: #1e90ff;
 }
+@media (min-width: 720px) {
+  .navbar ul li, .typing_text ul li {
+    font-size: 0.8333333333rem;
+  }
+}
 .navbar ul li a, .typing_text ul li a {
   position: relative;
   transition: all 0.5s;
@@ -133,9 +138,9 @@ img {
 
 .carousel {
   height: 95vh;
+  overflow: hidden;
 }
 .carousel .carousel__viewport {
-  overflow: hidden;
   height: 100%;
 }
 .carousel .carousel__viewport .carousel__track {
@@ -175,7 +180,7 @@ img {
   width: 60%;
 }
 .carousel .carousel__viewport .carousel__track .carousel__slide .second_slider {
-  background: linear-gradient(180deg, #0c6efc, #042d67);
+  background: linear-gradient(180deg, #0c6efc, #042d67 49.62%);
   height: 100vh;
 }
 .carousel .carousel__viewport .carousel__track .carousel__slide .second_slider .img-container {
@@ -206,6 +211,39 @@ img {
 .carousel .carousel__viewport .carousel__track .carousel__slide .third_slider .img-container img {
   height: 100%;
   width: 80%;
+}
+.carousel .carousel__viewport .carousel__track .carousel__slide .fourth_slider {
+  background: linear-gradient(135deg, #808080, #1e90ff 60.62%);
+  height: 100vh;
+}
+.carousel .carousel__viewport .carousel__track .carousel__slide .fourth_slider .img-container {
+  position: absolute;
+  height: 53rem;
+  right: -30rem;
+  top: -23rem;
+  width: 100%;
+}
+.carousel .carousel__viewport .carousel__track .carousel__slide .fourth_slider .img-container img {
+  height: 100%;
+  width: 80%;
+}
+.carousel .carousel__viewport .carousel__track .carousel__slide .fifth_slider {
+  background: linear-gradient(45deg, #0c6efc, #800080 49.62%);
+  height: 100vh;
+}
+.carousel .carousel__viewport .carousel__track .carousel__slide .fifth_slider .img-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 53rem;
+  right: -18rem;
+  top: -10rem;
+  width: 100%;
+}
+.carousel .carousel__viewport .carousel__track .carousel__slide .fifth_slider .img-container img {
+  height: 60%;
+  width: 50%;
 }
 .carousel .carousel__viewport .carousel__track .carousel__slide .hero {
   align-items: center;
@@ -246,4 +284,26 @@ img {
   line-height: 2.5rem;
   margin-bottom: 2.5rem;
   max-width: 33rem;
+}
+
+.homePage_body {
+  height: 150vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+.homePage_body .gridCont {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+}
+.homePage_body .gridCont--card {
+  width: 600px;
+  width: 600px;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  padding: 10px;
 }/*# sourceMappingURL=index.css.map */

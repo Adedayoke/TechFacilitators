@@ -21,9 +21,8 @@ const Slider_container = ({header_text, body_text, bg_className, image_url, butt
                             className=""
                             href="https://student-dashboard.aiti.ng/signUp"
                           >
-                            <Button className={`${buttonClass}`}>
-                              Enroll Now
-                            </Button>
+                            <Button children={"Enroll Now"} className={`${buttonClass}`}/>
+                              
                           </a>
                         </div>
                         <div className="img-container">

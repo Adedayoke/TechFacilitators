@@ -6,6 +6,7 @@
  
 // base & layout
 @import 'base';
+@import 'breakpoints';
 
 // colors
 @import 'colors';
@@ -16,5 +17,8 @@
 @import 'styles_components/button';
 @import 'styles_components/typing_text';
 @import 'styles_components/slider';
+
+// pages
+@import 'styles_pages/homePage';
 
 // utilities (margin, padding, opacity)

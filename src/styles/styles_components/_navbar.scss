@@ -20,7 +20,9 @@
             display: inline-block;
             margin-right: $base-font-size * 1.25;
             color: $secondary-color;
-            
+            @include md {
+                font-size: $base-font-size /1.2;
+            }
             a {
                 position: relative;
                 transition: all .5s;

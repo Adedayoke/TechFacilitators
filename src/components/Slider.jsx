@@ -58,6 +58,24 @@ const Slider = () => {
             buttonClass="signUpBtn"
           />
         </div>
+        <div className="swiper-slide">
+          <Slider_container
+            header_text="No matter your  technical background, our fully equipped instructor has the right word for you ."
+            body_text=""
+            bg_className="fourth_slider"
+            image_url= "https://a.storyblok.com/f/199879/2354x1682/38fbb09c68/hero.png/m/"
+            buttonClass="signUpBtn"
+          />
+        </div>
+        <div className="swiper-slide">
+          <Slider_container
+            header_text="Our instructors are seasoned teachers with great understanding of quality content delivery ."
+            body_text=""
+            bg_className="fifth_slider"
+            image_url= "https://a.storyblok.com/f/199879/1557x1078/8ca5c4763d/oblong-3.png/m/"
+            buttonClass="signUpBtn"
+          />
+        </div>
         {/* <div className="swiper-pagination"></div> */}
       </div>
     </div>

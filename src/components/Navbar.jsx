@@ -14,8 +14,8 @@ const Navbar = () => {
             <li><a href="/contact">Job Offers</a></li>
         </ul>
         <div className="buttons">
-            <Button className='signUpBtn'>Sign up</Button>
-            <Button className='enrollBtn'>Enroll Now</Button>
+            <Button children={"Sign up"} className='signUpBtn'/>
+            <Button children={"Enroll Now"} className='enrollBtn'/>
         </div>
     </div>
   )

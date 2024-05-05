@@ -1,0 +1,24 @@
+.homePage{
+
+    &_body {
+        height: 150vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 50px;
+        .gridCont{
+            height: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: $base-font-size * 2;
+            &--card {
+                width: 600px;
+                width: 600px;
+                box-shadow: $box-shadow ;
+                display: flex;
+                align-items: center;
+                padding: 10px;
+            }
+        }
+    }
+}
