@@ -1,0 +1,43 @@
+@include xs {
+    .img-container{
+        visibility: hidden
+    }
+    .inner__wrapper{
+        grid-template-columns:  1fr;
+        h1{
+            font-size: $base-font-size * 3;
+            line-height: $base-font-size * 3.7;
+        }
+        p{
+            font-size: $base-font-size * 1.5;
+            line-height: $base-font-size * 2;
+            margin-bottom: $base-font-size * 2;
+        }
+    }
+}
+@include sm {
+
+}
+@include md {
+
+}
+@include lg {
+    .img-container{
+        visibility: visible
+    }
+    .inner__wrapper{
+        grid-template-columns: repeat(2, 1fr);
+        h1{
+            font-size: $base-font-size * 3.5;
+            line-height: $base-font-size * 4.7;
+        }
+        p{
+            font-size: $base-font-size * 2;
+            line-height: $base-font-size * 2.5;
+            margin-bottom: $base-font-size * 2.5;
+        }
+    }
+}
+@include xl {
+
+}
