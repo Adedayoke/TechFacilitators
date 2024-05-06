@@ -3,9 +3,14 @@
     position: static;
     margin-top: $base-font-size *5;
     height: $base-font-size * 5;
-    font-size: $base-font-size * 1.9;
     font-family: "Fira Code", monospace;
     @include flexboxCenter;
+    @include xs {
+        font-size: $base-font-size ;
+    }
+    @include lg{
+        font-size: $base-font-size * 1.9;
+    }
 
     .updatedTexts{
         span:nth-child(1){

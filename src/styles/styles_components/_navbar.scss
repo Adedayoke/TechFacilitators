@@ -11,17 +11,42 @@
     width: 100%;
     .logoImg{
         img{
-            width: $base-font-size * 16;
+            
+            @include sm {
+                width: $base-font-size * 13;
+            }
+            @include md {
+                width: $base-font-size * 13;
+            }
+            @include lg {
+                width: $base-font-size * 16;
+            }
         }
     }
     ul{
+        @include xs {
+            display: none;
+        }
+        @include md {
+            display: block;
+        }
+        
         li{
             list-style: none;
             display: inline-block;
-            margin-right: $base-font-size * 1.25;
-            color: $secondary-color;
+            
             @include md {
+                margin-right: $base-font-size / 2;
+            }
+            @include lg {
+                margin-right: $base-font-size * 1.25;
+            }
+            color: $secondary-color;
+            @include sm {
                 font-size: $base-font-size /1.2;
+            }
+            @include lg {
+                font-size: $base-font-size;
             }
             a {
                 position: relative;
