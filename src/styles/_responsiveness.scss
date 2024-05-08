@@ -19,8 +19,7 @@
             &_body{
                 .gridCont{
                     grid-template-columns: 1fr;
-                    &--card{
-                    }
+                   
                 }
             }
         }
@@ -33,8 +32,7 @@
                 padding: 10px;
                 .gridCont{
                     grid-template-columns: repeat(2, 1fr);
-                    &--card{
-                    }
+                   
                 }
             }
         }
@@ -47,8 +45,7 @@
                 padding: 50px;
                 .gridCont{
                     grid-template-columns: repeat(2, 1fr);
-                    &--card{
-                    }
+                   
                 }
             }
         }
@@ -77,8 +74,7 @@
                 padding: 50px;
                 .gridCont{
                     grid-template-columns: repeat(3, 1fr);
-                    &--card{
-                    }
+                   
                 }
             }
         }
