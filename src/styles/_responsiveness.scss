@@ -14,18 +14,45 @@
             margin-bottom: $base-font-size * 2;
         }
     }
+    .homePage{
+        &-cont{
+            &_body{
+                .gridCont{
+                    grid-template-columns: 1fr;
+                    &--card{
+                    }
+                }
+            }
+        }
+    }
 }
 @include sm {
-    .homePage_body{
-        padding: 50px 80px;
-        .gridCont{
-            &--card{
-                margin: 0 auto;
+    .homePage{
+        &-cont{
+            &_body{
+                padding: 10px;
+                .gridCont{
+                    grid-template-columns: repeat(2, 1fr);
+                    &--card{
+                    }
+                }
             }
         }
     }
 }
 @include md {
+    .homePage{
+        &-cont{
+            &_body{
+                padding: 50px;
+                .gridCont{
+                    grid-template-columns: repeat(2, 1fr);
+                    &--card{
+                    }
+                }
+            }
+        }
+    }
 
 }
 @include lg {
@@ -42,6 +69,18 @@
             font-size: $base-font-size * 2;
             line-height: $base-font-size * 2.5;
             margin-bottom: $base-font-size * 2.5;
+        }
+    }
+    .homePage{
+        &-cont{
+            &_body{
+                padding: 50px;
+                .gridCont{
+                    grid-template-columns: repeat(3, 1fr);
+                    &--card{
+                    }
+                }
+            }
         }
     }
 }

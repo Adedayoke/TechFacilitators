@@ -1,32 +1,48 @@
 .homePage{
 
     &-cont{
+        background-color: $primary-color;
         text-align: center;
         padding-top: 50px ;
+        color: $primary-color;
         h1{
             font-family: "Cormorant Upright", serif;
             font-weight: 700;
+            font-size: $base-font-size * 2;
             span{
                 font-size: $base-font-size * 3;
+                color: $tertiary-color;
             }
         }
         &_body {
+            text-align: left;
             height: 150vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 50px;
+            overflow-y: auto;
             .gridCont{
                 height: 100%;
-                display: flex;
-                justify-content: space-between;
-                flex-flow: row wrap;
+                display: grid;
+                grid-gap: 10px;
                 &--card {
+                    border-radius: 10px;
                     box-shadow: $box-shadow;
                     padding: 10px;
+                    background-color: $secondary-color;
+                    height: 100%;
                     img{
                         width: 30%;
-                        
+                        margin: 0 auto;
+                        display: block;
+                    }
+                    .enrollBtn_class{
+                        color: black;
+                        font-weight: 700;
+                        span{
+                            cursor: pointer;
+                        }
                     }
                 }
             }
