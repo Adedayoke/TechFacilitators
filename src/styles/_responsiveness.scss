@@ -16,7 +16,14 @@
     }
 }
 @include sm {
-
+    .homePage_body{
+        padding: 50px 80px;
+        .gridCont{
+            &--card{
+                margin: 0 auto;
+            }
+        }
+    }
 }
 @include md {
 
