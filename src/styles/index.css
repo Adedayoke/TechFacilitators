@@ -182,7 +182,6 @@ img {
 }
 
 .carousel {
-  height: 95vh;
   overflow: hidden;
 }
 .carousel .carousel__viewport {
@@ -304,7 +303,6 @@ img {
   display: grid;
   justify-content: space-between;
   margin-top: 3.4rem;
-  padding: 1.25rem;
   height: 100%;
 }
 .carousel .carousel__viewport .carousel__track .carousel__slide .hero .inner__wrapper .content {
@@ -319,7 +317,6 @@ img {
 .carousel .carousel__viewport .carousel__track .carousel__slide .hero .inner__wrapper .content h1 {
   font-family: "Cormorant Upright", serif;
   font-weight: 700;
-  margin-bottom: 2.5rem;
 }
 .carousel .carousel__viewport .carousel__track .carousel__slide .hero .inner__wrapper .content p {
   max-width: 33rem;
@@ -334,10 +331,8 @@ img {
 .homePage-cont h1 {
   font-family: "Cormorant Upright", serif;
   font-weight: 700;
-  font-size: 2rem;
 }
 .homePage-cont h1 span {
-  font-size: 3rem;
   color: #000000;
 }
 .homePage-cont_body {
@@ -378,17 +373,25 @@ img {
   .img-container {
     visibility: hidden;
   }
-  .inner__wrapper {
+  .carousel {
+    height: 60vh;
+  }
+  .carousel .inner__wrapper {
     grid-template-columns: 1fr;
   }
-  .inner__wrapper h1 {
-    font-size: 3rem;
-    line-height: 3.7rem;
+  .carousel .inner__wrapper h1 {
+    font-size: 2rem;
+    line-height: 3rem;
+    margin-bottom: 0;
   }
-  .inner__wrapper p {
-    font-size: 1.5rem;
+  .carousel .inner__wrapper p {
+    margin-top: 0;
+    font-size: 1rem;
     line-height: 2rem;
     margin-bottom: 2rem;
+  }
+  .homePage-cont h1 span {
+    font-size: 2rem;
   }
   .homePage-cont_body .gridCont {
     grid-template-columns: 1fr;
@@ -403,25 +406,38 @@ img {
   }
 }
 @media (min-width: 760px) {
+  .carousel {
+    height: 90vh;
+  }
   .homePage-cont_body {
     padding: 50px;
   }
   .homePage-cont_body .gridCont {
     grid-template-columns: repeat(2, 1fr);
   }
+  .carousel .inner__wrapper h1 {
+    font-size: 2.5rem;
+  }
+  .carousel .inner__wrapper p {
+    font-size: 1.5rem;
+  }
 }
 @media (min-width: 960px) {
   .img-container {
     visibility: visible;
   }
-  .inner__wrapper {
+  .carousel {
+    height: 95vh;
+  }
+  .carousel .inner__wrapper {
     grid-template-columns: repeat(2, 1fr);
   }
-  .inner__wrapper h1 {
+  .carousel .inner__wrapper h1 {
     font-size: 3.5rem;
     line-height: 4.7rem;
+    margin-bottom: 2.5rem;
   }
-  .inner__wrapper p {
+  .carousel .inner__wrapper p {
     font-size: 2rem;
     line-height: 2.5rem;
     margin-bottom: 2.5rem;

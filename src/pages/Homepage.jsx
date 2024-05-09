@@ -62,7 +62,6 @@ const Homepage = () => {
 
   return (
     <div className="homePage">
-      <Navbar />
       <Typing_text />
       <Slider />
       <section className="homePage-cont">
