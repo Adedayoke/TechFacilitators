@@ -2,5 +2,6 @@
     @include buttonSecondary;
 }
 .enrollBtn{
-    @include buttonPrimary
+    @include buttonPrimary;
+    margin-left: 10px;
 }

@@ -150,9 +150,9 @@ img {
   border: 1px solid #1e90ff;
   background-color: transparent;
   color: #1e90ff;
-  margin-left: 10px;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+  margin-left: 10px;
 }
 
 .typing_text {
@@ -392,16 +392,78 @@ img {
 .product_pricing--cont .product_header .product_intro-desc div {
   margin-top: 2rem;
 }
+.product_pricing--cont .product_body {
+  justify-content: left;
+  flex-direction: column;
+  padding: 4rem 100px;
+}
+.product_pricing--cont .product_body .section {
+  width: 60%;
+  border: 1px solid #1e90ff;
+  padding: 1rem;
+}
+.product_pricing--cont .product_body-section1 {
+  margin-bottom: 4rem;
+}
+.product_pricing--cont .product_body-section2 {
+  background-color: red;
+}
 .product_pricing--cont .product_overview {
+  transition: all 0.5s;
   position: absolute;
   right: 8rem;
   top: 7rem;
-  height: 90vh;
   width: 25%;
+  height: 70vh;
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
   background-color: white;
+  padding: 1rem;
+}
+.product_pricing--cont .product_overview img {
+  display: block;
+  width: 100%;
+  height: 7.2rem;
+}
+.product_pricing--cont .product_overview ul {
+  list-style-type: circle;
+  padding-left: 20px;
+}
+.product_pricing--cont .product_overview .applyBtn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  padding: 0.525rem;
+  background-color: #1e90ff;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border: 1px solid #1e90ff;
+  background-color: transparent;
+  color: #1e90ff;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  border-radius: 0;
+  margin: 1rem 0;
 }
 
+.overviewAnimationContf {
+  animation: overview_transition 0.1s ease-out forwards;
+}
+
+@keyframes overview_transition {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    position: fixed;
+    opacity: 1;
+    top: 4rem;
+  }
+}
 @media (min-width: 0) {
   .img-container {
     visibility: hidden;
