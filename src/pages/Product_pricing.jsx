@@ -64,8 +64,6 @@ const Product_pricing = () => {
                     <ul>
                       <li>
                         <div>
-                          <svg>
-                          </svg>
                           <div>
                             <div>
                               <div>
