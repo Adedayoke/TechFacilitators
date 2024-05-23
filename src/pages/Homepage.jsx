@@ -6,7 +6,6 @@ import Slider from "../components/Slider";
 import Navbar from "../components/Navbar";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import animationData from "../assets/animation4.json";
-import styled from "styled-components";
 import { PageContext } from "../context/PageContext";
 import { useHref } from "react-router-dom";
 
