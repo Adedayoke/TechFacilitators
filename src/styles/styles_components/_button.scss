@@ -1,7 +1,16 @@
 .signUpBtn{
     @include buttonSecondary;
+    color: $tertiary-color;
+    background-color: $primary-color;
 }
 .enrollBtn{
     @include buttonPrimary;
     margin-left: 10px;
+    color: $primary-color;
+    border: 1px solid $primary-color;
+}
+
+.sgnBtnChange{
+    color: $secondary-color !important;
+    background-color: $primary-color !important; 
 }

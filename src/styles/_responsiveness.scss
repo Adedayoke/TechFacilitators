@@ -2,10 +2,9 @@
     .img-container{
         visibility: hidden
     }
-    .carousel{
+    .third-slider{
         height: 60vh;
         .inner__wrapper{
-            grid-template-columns:  1fr;
             h1{
                 font-size: $base-font-size * 2;
                 line-height: $base-font-size * 3;
@@ -50,7 +49,7 @@
     }
 }
 @include md {
-    .carousel{
+    .third-slider{
         height: 90vh;
     }
     .homePage{
@@ -64,7 +63,7 @@
             }
         }
     }
-    .carousel{
+    .third-slider{
         .inner__wrapper{
             h1{
                 font-size: $base-font-size * 2.5;
@@ -80,10 +79,8 @@
     .img-container{
         visibility: visible
     }
-    .carousel{
-        height: 95vh;
+    .third_slider{
         .inner__wrapper{
-            grid-template-columns: repeat(2, 1fr);
             h1{
                 font-size: $base-font-size * 3.5;
                 line-height: $base-font-size * 4.7;

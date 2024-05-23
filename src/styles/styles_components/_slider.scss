@@ -1,137 +1,63 @@
-.carousel {
-  overflow: hidden;
-  .carousel__viewport {
-    height: 100%;
-    .carousel__track {
-      display: flex;
-      padding: 0 !important;
-      position: relative;
-      height: inherit;
-      .carousel__slide {
-        width: 100%;
-        align-items: center;
-        display: flex;
-        flex-shrink: 0;
-        justify-content: center;
-        margin: 0;
-        position: relative;
-        scroll-snap-stop: auto;
-        transform: translateZ(0);
-        height: inherit;
-        .first_slider {
-          background-image: linear-gradient(135deg, #ffcd02, #ef4871 49.62%);
-          height: 100vh;
-          .img-container {
-            @include flexboxCenter;
-            position: absolute;
-            height: $base-font-size * 53;
-            right: -$base-font-size * 20;
-            top: -$base-font-size * 8;
-            width: 100%;
-            img {
-              height: 70%;
-              width: 60%;
-            }
-          }
-        }
-        .second_slider {
-          background: linear-gradient(180deg, #0c6efc, #042d67 49.62%);
-          height: 100vh;
-          .img-container {
-            @include flexboxCenter;
-            position: absolute;
-            height: $base-font-size * 53;
-            right: -$base-font-size * 18;
-            top: -$base-font-size * 10;
-            width: 100%;
-            img {
-              height: 60%;
-              width: 50%;
-            }
-          }
-        }
-        .third_slider {
-          background: linear-gradient(180deg, #572cd4, #211a64 49.62%);
-          height: 100vh;
-          .img-container {
-            position: absolute;
-            height: $base-font-size * 53;
-            right: -$base-font-size * 30;
-            top: -$base-font-size * 23;
-            width: 100%;
-            img {
-              height: 100%;
-              width: 80%;
-            }
-          }
-        }
-        .fourth_slider {
-          background: linear-gradient(135deg, #808080, $secondary-color 60.62%);
-          height: 100vh;
-          .img-container {
-            position: absolute;
-            height: $base-font-size * 53;
-            right: -$base-font-size * 30;
-            top: -$base-font-size * 23;
-            width: 100%;
-            img {
-              height: 100%;
-              width: 80%;
-            }
-          }
-        }
-        .fifth_slider {
-          background: linear-gradient(45deg, #0c6efc, #800080 49.62%);
-          height: 100vh;
-          .img-container {
-            @include flexboxCenter;
-            position: absolute;
-            height: $base-font-size * 53;
-            right: -$base-font-size * 18;
-            top: -$base-font-size * 10;
-            width: 100%;
-            img {
-              height: 60%;
-              width: 50%;
-            }
-          }
-        }
-        .hero {
-          align-items: center;
-          display: grid;
-          //   overflow: hidden;
-          position: relative;
-          width: 100%;
-          height: 100%;
-          .inner__wrapper {
-            position: relative;
-            z-index: 2;
-            align-items: center;
-            display: grid;
-            justify-content: space-between;
-            margin-top: $base-font-size * 3.4;
-            height: 100%;
+.swiper-container {
+  margin-top: $base-font-size * 5;
+}
 
-            .content {
-              padding-left: $base-padding;
-              z-index: 10;
-              align-self: flex-start;
-              color: #fff;
-              margin-bottom: $base-font-size * 3.125;
-              max-width: $base-font-size * 46.87;
-              text-align: left;
-              h1 {
-                font-family: "Cormorant Upright", serif;
-                font-weight: 700;
-              }
-              p {
-                max-width: $base-font-size * 33;
-              }
-            }
-          }
+.third_slider {
+  width: 100%;
+  margin: 0;
+  padding: 50px;
+  // background: linear-gradient(180deg, #572cd4, #211a64 49.62%);
+  background-color: black;
+  height: 90vh;
+  overflow: hidden;
+  // margin-top: $base-font-size * 3.4;
+  .container {
+    height: 100%;
+    .inner__wrapper {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+      margin-top: $base-font-size * 3.4;
+      height: 100%;
+
+      .content {
+        padding: 50px 0 50px 50px;
+        flex-basis: 50%;
+        z-index: 10;
+        color: #fff;
+        max-width: $base-font-size * 60;
+        height: 100%;
+        text-align: left;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: left;    
+        h1 {
+          font-family: "Cormorant Upright", serif;
+          font-weight: 700;
+          flex-basis: 50%;
+        }
+        a {
+          display: block;
+          max-width: $base-font-size * 33;
+        }
+      }
+      .img-container {
+        flex-basis: 50%;
+        position: absolute;
+        height: 100%;
+        right: 0;
+        top: 0;
+        width: 50%;
+        @include flexboxCenter;
+        padding: 20px;
+        img {
+          height: 90%;
+          width: 90%;
         }
       }
     }
   }
-  
 }

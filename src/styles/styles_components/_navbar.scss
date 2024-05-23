@@ -1,15 +1,17 @@
 @use "sass:math";
 .navbar{
+    z-index: 10;
     height: $base-font-size * 5;
-    background-color: $tertiary-color;
     @include flexAlignCenter;
     justify-content: space-between;
-    padding: $base-padding;
+    padding: $base-padding *5 $base-padding *4 ;
     box-shadow: $box-shadow;
-    position: absolute;
+    position: fixed;
     left: 0;
-    top: 0;
+    top: 0px;
     width: 100%;
+    transition: all .4s;
+    color: $primary-color;
     .logoImg{
         img{
             
@@ -42,7 +44,7 @@
             @include lg {
                 margin-right: $base-font-size * 1.25;
             }
-            color: $secondary-color;
+            // color: $tertiary-color;
             @include sm {
                 font-size: math.div($base-font-size, 1.2);
             }
@@ -78,5 +80,20 @@
     .buttons{
         @include flexAlignCenter;
         justify-content: space-between;
+    }
+}
+.fixed{
+    position: fixed !important;
+    background-color: $secondary-color;
+    padding: $base-padding !important;
+    // top: 0 !important;
+    // animation: fadein 1s ease forwards;
+}
+@keyframes fadein{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
     }
 }

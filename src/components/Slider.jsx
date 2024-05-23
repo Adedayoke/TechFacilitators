@@ -3,11 +3,22 @@ import SwiperCore from "swiper";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/swiper-bundle.css";
 import Slider_container from "./Slider_container";
+import image1 from "../images/people-removebg-preview.png";
+import image2 from "../images/pexels-fauxels-3184405.png";
+import image3 from "../images/pexels-chetanvlad-2923156.png";
+import image4 from "../images/pexels-fauxels-3184405.png";
+import image5 from "../images/pexels-fauxels-3182812-removebg-preview.png";
+import {useTypewriter, Cursor} from 'react-simple-typewriter'
 
 SwiperCore.use([Autoplay, Pagination]);
 
 const Slider = () => {
   const swiperRef = useRef(null);
+  const wordsArray = useTypewriter({
+    words: ['Welcome to TechFacilitators.', 'Need a Physical Or Remote Developer?', 'Need to upgrade your current Stack?', 'Need a Team?'],
+    loop: {},
+    typeSpeed: 120,
+});
 
   useEffect(() => {
     swiperRef.current = new SwiperCore(".swiper-container", {
@@ -29,56 +40,14 @@ const Slider = () => {
   }, []);
 
   return (
-    <div className="swiper-container">
-      <div className="swiper-wrapper">
-        <div className="swiper-slide">
           <Slider_container
-            header_text="Get valuable tech training and secure positions within leading global technology firms."
+            header_text={wordsArray[0]}
             body_text=""
-            bg_className="first_slider"
-            image_url= "https://a.storyblok.com/f/199879/2068x1430/c16cfd6eee/pose-3.png/m/"
-            buttonClass="signUpBtn"
-          />
-        </div>
-        <div className="swiper-slide">
-          <Slider_container
-            header_text="Get trained by world class tutors with industry experience"
-            body_text="Our tutors are carefully selected industry specialist with extensive academia experience."
-            bg_className="second_slider"
-            image_url= "https://a.storyblok.com/f/199879/1557x1078/8ca5c4763d/oblong-3.png/m/"
-            buttonClass="enrollBtn"
-          />
-        </div>
-        <div className="swiper-slide">
-          <Slider_container
-            header_text="Create the future you see"
-            body_text="Upskill and get positioned for impact in the world of Tech. "
             bg_className="third_slider"
-            image_url= "https://a.storyblok.com/f/199879/2354x1682/38fbb09c68/hero.png/m/"
+            image_url= {image1}
             buttonClass="signUpBtn"
           />
-        </div>
-        <div className="swiper-slide">
-          <Slider_container
-            header_text="No matter your  technical background, our fully equipped instructor has the right word for you ."
-            body_text=""
-            bg_className="fourth_slider"
-            image_url= "https://a.storyblok.com/f/199879/2354x1682/38fbb09c68/hero.png/m/"
-            buttonClass="signUpBtn"
-          />
-        </div>
-        <div className="swiper-slide">
-          <Slider_container
-            header_text="Our instructors are seasoned teachers with great understanding of quality content delivery ."
-            body_text=""
-            bg_className="fifth_slider"
-            image_url= "https://a.storyblok.com/f/199879/1557x1078/8ca5c4763d/oblong-3.png/m/"
-            buttonClass="signUpBtn"
-          />
-        </div>
-        {/* <div className="swiper-pagination"></div> */}
-      </div>
-    </div>
+        
   );
 };
 

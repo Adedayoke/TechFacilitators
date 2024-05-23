@@ -1,20 +1,22 @@
 import Navbar from './components/Navbar';
 import Homepage from './pages/Homepage';
-import Pricing from './pages/Pricing';
-import Product_pricing from './pages/Product_pricing';
+import Courses from './pages/Courses';
+import CoursePricing from './pages/CoursePricing';
 import './styles/index.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useHref } from 'react-router-dom';
+// import { PageContext } from './context/PageContext';
+// import React, { useContext } from 'react';
 
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
       <BrowserRouter>
+      <Navbar/>
         <Routes>
           <Route path='/' element={<Homepage />} />
-          <Route path='/pricing' element={<Pricing />} />
-          <Route path='/pricing/:id' element={<Product_pricing />} />
+          <Route path='/courses' element={<Courses />} />
+          <Route path='/coursepricing/:id' element={<CoursePricing />} />
         </Routes>
       </BrowserRouter>
     </div>
