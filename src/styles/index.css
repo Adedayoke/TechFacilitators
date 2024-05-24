@@ -650,12 +650,12 @@ footer {
 }
 .course_pricing .sect2 {
   background-color: rgb(253, 254, 255);
-  font-size: 0.85rem;
 }
 .course_pricing .sect2 h1 {
   text-align: center;
 }
 .course_pricing .sect2 p {
+  font-size: 0.85rem;
   font-weight: 300;
   text-align: center;
   padding: 0px 100px;
@@ -687,6 +687,31 @@ footer {
 }
 .course_pricing .sect2--nav ul .active {
   background-color: #1e90ff;
+  color: rgba(255, 255, 255, 0.9294117647);
+}
+.course_pricing .sect2--body {
+  margin: 0 100px;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+}
+.course_pricing .sect2--body-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+.course_pricing .sect2--body-footer button {
+  padding: 0.525rem;
+  background-color: #1e90ff;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  color: white;
+  cursor: pointer;
+  border: none;
+  font-size: 1.3rem;
+  padding: 15px 20px;
+  width: 30%;
 }
 
 .courses {

@@ -107,7 +107,7 @@ const CoursePricing = () => {
             <li>Front-end Developer</li>
           </ul>
         </div>
-        <div>
+        <div className="sect2--body">
           <div>
             <div className="left">
               <img src="" alt="" />
@@ -116,8 +116,8 @@ const CoursePricing = () => {
               <img src="" alt="" />
             </div>
           </div>
-          <div>
-            <p>Want to become a Frontend Developer?</p>
+          <div  className="sect2--body-footer">
+            <h2>Want to become a Frontend Developer?</h2>
             <button>Enroll Now</button>
           </div>
         </div>
