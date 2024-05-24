@@ -1,0 +1,130 @@
+@use "sass:math";
+.course_pricing{
+    min-height: 100vh;
+    padding-top: $base-font-size * 5;
+    font-weight: 500 !important;
+    background-color: $background-color;
+    &--header{
+        padding: 50px 100px;
+        h1{
+
+        }
+        button{
+            border-radius: 20px;
+            border: 1px solid $secondary-color;
+            padding: 10px;
+            background-color: transparent;
+        }
+        &-flex1{
+            @include flexAlignCenter;
+            height: 50vh;
+            margin-top: 10px;
+            .left{
+                flex-basis: 50%;
+                height: 100%;
+                margin-right: 10px;
+                .img{
+                    width: 100%;
+                    height: 100%;
+                    background-image: url("../assets/man_explaining.jpg");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                    
+                }
+            }
+            .right{
+                flex-basis: 50%;
+                height: 100%;
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                .btnCont{
+                    margin-top: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    .btn1{
+                        @include buttonSecondary;
+                        font-size: $base-font-size * 1.3;
+                        padding: 15px 20px;
+                        width: 45%
+                    }
+                    .btn2{
+                        @include buttonPrimary;
+                        font-size: $base-font-size * 1.3;
+                        width: 45%;
+                        padding: 10px 20px;
+                    }
+                    
+                }
+                &_about{
+                    font-weight: 300;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+    section{
+        padding: 50px 100px;
+    }
+    .sect1{
+        h1{
+            text-align: center;
+        }
+        &--grid{
+            
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: $base-font-size * 2;
+            .course_card{
+                box-shadow: $box-shadow;
+                padding: $base-font-size;
+                &--image{
+                    color: $secondary-color;
+                    font-size: $base-font-size * 3;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .sect2{
+        background-color: $background-color--secondary;
+        font-size: $base-font-size * 0.85;
+        h1{
+            text-align: center;
+        }
+        p{
+            font-weight: 300;
+            text-align: center;
+            padding: 0px 100px;
+        }
+        &--nav{
+            padding: 0 150px;
+            @include flexAlignCenter;
+            justify-content: space-between;
+            
+            ul{
+                background-color: $primary-color;
+                box-shadow: $box-shadow;
+                border-radius: 30px;
+                padding: 5px;
+                flex-basis: 70%;
+                @include flexAlignCenter;
+                justify-content: space-between;
+                li{
+                    cursor: pointer;
+                    list-style: none;
+                    padding: 10px;
+                    border-radius: 30px;
+                    padding: 10px;
+                    text-align: center;
+                    width: math.div(100%, 3);
+                }
+                .active{
+                    background-color: $secondary-color;
+                }
+            }
+        }
+    }
+}

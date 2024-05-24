@@ -21,7 +21,7 @@ const Card = ({courseName, id, content, summary}) => {
                   )
                 })}
             </ul>
-            <Link to={`/coursepricing:${id}`}><button className='learn'>Learn More</button></Link>
+            <Link to={`/coursepricing`}><button className='learn'>Learn More</button></Link>
         </div>
     </div>
   )

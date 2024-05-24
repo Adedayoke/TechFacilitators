@@ -16,7 +16,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Homepage />} />
           <Route path='/courses' element={<Courses />} />
-          <Route path='/coursepricing/:id' element={<CoursePricing />} />
+          <Route path='/coursepricing' element={<CoursePricing />} />
         </Routes>
       </BrowserRouter>
     </div>
