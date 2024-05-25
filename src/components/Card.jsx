@@ -1,9 +1,8 @@
 import React from 'react'
-import image1 from "../images/Backend.svg"
-import { Link } from 'react-router-dom'
+import image1 from "../assets/man_explaining.jpg"
+import { Link, NavLink } from 'react-router-dom'
 
 const Card = ({courseName, id, content, summary}) => {
-  console.log(content)
   return (
     <div className='card'>
         <div className="card_left">
@@ -21,7 +20,7 @@ const Card = ({courseName, id, content, summary}) => {
                   )
                 })}
             </ul>
-            <Link to={`/coursepricing`}><button className='learn'>Learn More</button></Link>
+            <NavLink to={`/coursepricing/${id}`}><button className='learn'>Learn More</button></NavLink>
         </div>
     </div>
   )

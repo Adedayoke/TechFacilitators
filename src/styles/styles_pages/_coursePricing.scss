@@ -4,16 +4,32 @@
     padding-top: $base-font-size * 5;
     font-weight: 500 !important;
     background-color: $background-color;
+    h1{
+        font-weight: 400;
+    }
     &--header{
         padding: 50px 100px;
-        h1{
-
-        }
         button{
             border-radius: 20px;
             border: 1px solid $secondary-color;
             padding: 10px;
             background-color: transparent;
+            margin-right: $base-font-size;
+            &:nth-child(1){
+                span:nth-child(1){
+                    color: rgb(1, 1, 173)
+                }
+            }
+            &:nth-child(2){
+                span:nth-child(1){
+                    color: gold
+                }
+            }
+            span:nth-child(2){
+                color: $secondary-color;
+                font-weight: 300;
+                font-size: $base-font-size * 1.2;
+            }
         }
         &-flex1{
             @include flexAlignCenter;
@@ -73,7 +89,6 @@
             text-align: center;
         }
         &--grid{
-            
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             grid-gap: $base-font-size * 2;
@@ -142,6 +157,253 @@
                     padding: 15px 20px;
                     width: 30%;
 
+                }
+            }
+        }
+    }
+    .sect3{
+        background-color: $background-color--tertiary;
+        h1{
+            text-align: center;
+        }
+        &--grid{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: $base-font-size * 2;
+            .card_whytf{
+                box-shadow: $box-shadow;
+                background-color: $primary-color;
+                &--image{
+                    color: $secondary-color;
+                    font-size: $base-font-size * 3;
+                    text-align: center;
+                }
+                &--header{
+                    color: $secondary-color;
+                    font-size: $base-font-size * 1.5;
+                    border-bottom: .2px solid black;
+                    padding: $base-font-size;
+                }
+                ul{
+                    padding: $base-font-size $base-font-size * 3;
+                    li{
+                        list-style-type: disc;
+                        font-weight: 400;
+                    }
+                }
+            }
+            .last_card{
+                padding: $base-font-size * 2;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                flex-direction: column;
+                
+                button{
+                    @include buttonSecondary;
+                    width: 100%;
+                    font-size: $base-font-size * 1.4;
+                    
+                }
+            }
+        }
+    }
+    .sect4{
+        h2{
+            font-size: $base-font-size;
+            text-align: center;
+        }
+        h1{
+            text-align: center;
+        }
+        &--grid{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            p{
+                display: flex;
+                align-items: center;
+                span {
+                    color: green;
+                    margin: $base-font-size;
+                }
+            }
+        }
+        .toolsCovered{
+            box-shadow: $box-shadow;
+
+        }
+    }
+    .sect5{
+        h2{
+            font-size: $base-font-size;
+            text-align: center;
+        }
+        h1{
+            text-align: center;
+        }
+        &--topicsCont{
+            .drop_down{
+                cursor: pointer;
+                box-sizing: content-box;
+                background-color: $primary-color;
+                margin-bottom: $base-font-size;
+                transition: all .5s;
+                &--header{
+                    padding: $base-font-size * 2;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    p{
+                        font-size: $base-font-size * 1.3;
+                        width: 50%;
+                        text-transform: capitalize;
+                    }
+                    .rotate {
+                        transform: rotate(0deg);
+                        transition: all .5s;
+                    }
+                    
+                    .rotate-active {
+                        transform: rotate(180deg) !important;
+                    }
+                }
+                &--content{
+                    transform: translateY(-300px);
+                    display: none;
+                    padding: $base-font-size * 2;
+                    background-color: $background-color--tertiary;
+                    h2{
+                        text-align: left;
+                    }
+                    ul{
+                        padding-left: $base-font-size*2;
+                        li{
+                            list-style-type: disc;
+                        }
+                    }
+                }
+            }
+            .activeContent{
+                .drop_down--content{
+                    transform: translateY(0);
+                    display: block;
+                }
+            }
+            
+            .topic{
+                &--no{
+                    margin-right: $base-font-size;
+                }
+            }
+            button{
+                cursor: pointer;
+                display: block;
+                margin: 0 auto;
+                padding: $base-font-size * 1.5;
+                border-radius: 30px;
+                border: none;
+                background-color: $primary-color;
+                color: $secondary-color;
+                font-size: $base-font-size * 1.3;
+            }
+        }
+    }
+    .sect6{
+        h1{
+            text-align: center;
+        }
+        &--descCont{
+            .drop_down{
+                cursor: pointer;
+                box-sizing: content-box;
+                background-color: $primary-color;
+                margin-bottom: $base-font-size;
+                transition: all .5s;
+                &--header{
+                    padding: $base-font-size * 2;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    p{
+                        font-size: $base-font-size * 1.3;
+                        width: 50%;
+                        text-transform: capitalize;
+                    }
+                    .rotate{
+                        animation: rotator .5s ease;
+                    }
+                }
+                &--content{
+                    transform: translateY(-300px);
+                    display: none;
+                    padding: $base-font-size * 2;
+                    background-color: $background-color--tertiary;
+                    h2{
+                        text-align: left;
+                    }
+                    ul{
+                        padding-left: $base-font-size*2;
+                        li{
+                            list-style-type: disc;
+                        }
+                    }
+                }
+            }
+            .activeContent{
+                .drop_down--header{
+                    font-weight: 600;
+                }
+                .drop_down--content{
+                    font-weight: 300;
+                    background-color: $primary-color;
+                    transform: translateY(0);
+                    display: block;
+                }
+            }
+            
+            .topic{
+                &--no{
+                    margin-right: $base-font-size;
+                }
+            }
+            button{
+                cursor: pointer;
+                display: block;
+                margin: 0 auto;
+                padding: $base-font-size * 1.5;
+                border-radius: 30px;
+                border: none;
+                background-color: $primary-color;
+                color: $secondary-color;
+                font-size: $base-font-size * 1.3;
+            }
+        }
+    }
+    .sect7{
+        h2{
+            text-align: center;
+            font-size: $base-font-size * 1.5;
+        }
+        &--gridCont{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: $base-font-size;
+            .project{
+                // display: flex;
+                // justify-content: space-between;
+                // flex-direction: column;
+                height: 300px;
+                background-color: white;
+                box-shadow: $box-shadow;
+                padding: $base-font-size;
+                border: .5px solid $background-color--tertiary;
+                h1{
+                    font-weight: 500;
+                }
+                img{
+                    max-width: 100%;
+                    display: block;
                 }
             }
         }

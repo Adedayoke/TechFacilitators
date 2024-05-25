@@ -16,7 +16,9 @@ function App() {
         <Routes>
           <Route path='/' element={<Homepage />} />
           <Route path='/courses' element={<Courses />} />
-          <Route path='/coursepricing' element={<CoursePricing />} />
+          <Route path='/coursepricing' >
+            <Route path=':id' element={<CoursePricing />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>

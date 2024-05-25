@@ -9,7 +9,7 @@ const Pricing = () => {
       {
         allCourses.map((item)=>{
           return(
-            <Card summary={item.summary} courseName={item.courseName} id={item.id} content={item.content} />
+            <Card summary={item.cardComponent?.summary} courseName={item.courseName} id={item.id} content={item.cardComponent?.content} />
           )
         })
       }

@@ -4,32 +4,45 @@
     margin: $base-font-size auto $base-font-size * 3;
     display: flex;
     align-items: center;
+    height: 350px;
+    max-height: fit-content;
+    background-color: $primary-color;
     &_left{
         flex-basis: 50%;
+        width: 100%;
         height: 100%;
         .imageCont{
             position: relative;
-            transition: all 1s;
+            transition: all 3s;
+            height: inherit;
+            width: 100%;
             img{
                 width: 100%;
                 height: 100%;
                 display: block;
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: 5;
             }
-            &::before{
+            &::after{
                 content: "";
                 height: 100%;
                 width: 100%;
                 position: absolute;
                 left: 0;
                 top: 0;
-                transition: all 1s;
-                opacity: 0;
+                background-color: red;
+                transition: all 3s ease 2s;
+                
             }
             &:hover{
                 transform: rotateY(180deg);
-                &::before{
+                &::after{
+                    transform: rotateY(-180deg);
+                    // z-index: 6;
                     background-color: red;
-                    opacity: 1;
+                    // opacity: 1;
                 }
                 
             }

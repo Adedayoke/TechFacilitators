@@ -1,25 +1,61 @@
 import React, { useEffect, useState } from "react";
 import { CiUser } from "react-icons/ci";
+import { FaCheckCircle, FaUser } from "react-icons/fa";
 import { GrLineChart } from "react-icons/gr";
 import { IoIosStar } from "react-icons/io";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import image1 from "../assets/industry_projects_clp_1.png";
+import image2 from "../assets/industry_projects_clp_2.png";
+import { allCourses } from "../utilities/AllCourses";
+import { useParams } from "react-router-dom";
 // import image3 from "../assets/man explaining.jpg";
 
 const CoursePricing = () => {
+  const {id} = useParams();
+  const [currentPage, setCurrentPage] = useState(-1);
+  const [currentDesc, setCurrentDesc] = useState(-1);
+  const [currentDesign, setCurrentDesign] = useState("");
+  const setPage = (page) => {
+    console.log(page);
+    if (page !== currentPage) {
+      setCurrentPage(page);
+    } else {
+      setCurrentPage(-1);
+    }
+  };
+  const setDesc = (desc) => {
+    if (desc !== currentDesc) {
+      setCurrentDesc(desc);
+    } else {
+      setCurrentDesc(-1);
+    }
+  };
+  const setDesign = (design) => {
+      setCurrentDesign(design);
+  };
+  const currentCourse = allCourses.find((item)=> item.id === id)
+  useEffect(()=>{
+
+    setCurrentDesign(currentCourse?.displayComponent?.related_courses[0]?.name)
+  }, [id])
+  
   return (
     <div className="course_pricing">
       <div className="course_pricing--header">
-        <h1>React.js Training Course Certification</h1>
+        <h1>{currentCourse.courseName} Certification</h1>
+        <br />
         <div>
-          <button>
-            <CiUser /> 17897 Learners{" "}
+          <button className="header-btn1">
+            <span><FaUser /></span> <span> {currentCourse?.displayComponent?.no_of_learners} </span> Learners
           </button>
-          <button>
-            <IoIosStar /> 4.7 7200 Ratings{" "}
+          <button className="header-btn1">
+            <span><IoIosStar /></span> <span> {currentCourse?.displayComponent?.rating} </span> {currentCourse?.displayComponent?.no_of_ratings} Ratings
           </button>
         </div>
+        <br />
         <div className="course_pricing--header-flex1">
           <div className="left">
-            <div className= "img"></div>
+            <div className="img"></div>
             <div></div>
           </div>
           <div className="right">
@@ -46,67 +82,46 @@ const CoursePricing = () => {
       </div>
 
       <section className="sect1">
-        <h1>Why choose React JS Training?</h1>
+        <h1>Why choose {currentCourse.courseName} Training?</h1>
         <br />
         <br />
         <div className="sect1--grid">
-          <div className="course_card">
+          {currentCourse?.displayComponent?.why_enroll?.map((reason)=>{
+            return(
+              <div className="course_card">
             <div className="course_card--image">
               <GrLineChart />
             </div>
             <p>
-              Major apps like Facebook, Instagram, Netflix, WhatsApp, Airbnb,
-              Yahoo! Mail and many more use React to build their User Interface
-              to improve user experience
+              {reason.text}
             </p>
           </div>
-          <div className="course_card">
-            <div  className="course_card--image">
-              <GrLineChart />
-            </div>
-            <p>
-              Major apps like Facebook, Instagram, Netflix, WhatsApp, Airbnb,
-              Yahoo! Mail and many more use React to build their User Interface
-              to improve user experience
-            </p>
-          </div>
-          <div className="course_card">
-            <div className="course_card--image">
-              <GrLineChart />
-            </div>
-            <p>
-              Major apps like Facebook, Instagram, Netflix, WhatsApp, Airbnb,
-              Yahoo! Mail and many more use React to build their User Interface
-              to improve user experience
-            </p>
-          </div>
-          
+            )
+          }) }
         </div>
       </section>
       <section className="sect2">
-        <h1>React Training Benefits</h1>
+        <h1>{currentCourse.courseName} Training Benefits</h1>
         <br />
         <br />
         <p>
-          React development stands out as the future of web creation, offering
-          unparalleled versatility and simplicity. According to a Statista
-          study, React JS reigns as the most sought-after web framework in 2022,
-          with 40.41% of global software developers opting for it in their web
-          application development. This trend isn't unexpected, given the steady
-          rise in demand for React developers in recent years. Mastering React
-          not only expands job opportunities and enhances pay prospects but also
-          connects you with a vast and supportive community.
+         {currentCourse?.displayComponent?.training_benefits}
         </p>
         <br />
         <br />
         <div className="sect2--nav">
           <h2>Designations</h2>
           <ul>
-            <li className="active">Front-end Engineer</li>
-            <li>React Developer</li>
-            <li>Front-end Developer</li>
+            {currentCourse?.displayComponent?.related_courses.map((course)=>{
+              return(
+                <li onClick={()=>setDesign(course.name)} className={currentDesign === course.name && "active"}>{course.name}</li>
+              )
+            })
+          }
           </ul>
         </div>
+        <br />
+        <br />
         <div className="sect2--body">
           <div>
             <div className="left">
@@ -116,20 +131,22 @@ const CoursePricing = () => {
               <img src="" alt="" />
             </div>
           </div>
-          <div  className="sect2--body-footer">
-            <h2>Want to become a Frontend Developer?</h2>
+          <div className="sect2--body-footer">
+            <h2>Want to become a {currentCourse?.jobtitle}</h2>
             <button>Enroll Now</button>
           </div>
         </div>
       </section>
-      <section>
-        <h1>Why React JS Training from Tech Facilitators</h1>
-        <div className="gridCont">
+      <section className="sect3">
+        <h1>Why {currentCourse.courseName} Training from Tech Facilitators</h1>
+        <br />
+        <br />
+        <div className="sect3--grid">
           <div
             className="card_whytf
           "
           >
-            <div>
+            <div className="card_whytf--header">
               <img src="" alt="" />
               <span>Live Interactive Learning</span>
             </div>
@@ -143,7 +160,7 @@ const CoursePricing = () => {
             className="card_whytf
           "
           >
-            <div>
+            <div className="card_whytf--header">
               <img src="" alt="" />
               <span>Lifetime Access</span>
             </div>
@@ -157,7 +174,7 @@ const CoursePricing = () => {
             className="card_whytf
           "
           >
-            <div>
+            <div className="card_whytf--header">
               <img src="" alt="" />
               <span>24x7 support</span>
             </div>
@@ -171,7 +188,7 @@ const CoursePricing = () => {
             className="card_whytf
           "
           >
-            <div>
+            <div className="card_whytf--header">
               <img src="" alt="" />
               <span>Hands-On Project Based Learning</span>
             </div>
@@ -185,7 +202,7 @@ const CoursePricing = () => {
             className="card_whytf
           "
           >
-            <div>
+            <div className="card_whytf--header">
               <img src="" alt="" />
               <span>Certification</span>
             </div>
@@ -196,7 +213,7 @@ const CoursePricing = () => {
             </ul>
           </div>
           <div
-            className="card_whytf
+            className="card_whytf last_card
           "
           >
             <p>Like what you heart feom our learners?</p>
@@ -205,19 +222,29 @@ const CoursePricing = () => {
           </div>
         </div>
       </section>
-      <section>
-        <h2>About your React Js Training</h2>
+      <section className="sect4">
+        <h2>About your {currentCourse.courseName} Training</h2>
+        <br />
         <h1>Skills Covered</h1>
-        <div>
-          <p>React Components</p>
-          <p>React React State Management</p>
-          <p>React Event Handling</p>
-          <p>Routing in React</p>
-          <p>React Application Testing</p>
-          <p>React Native</p>
+        <br />
+        <br />
+        <div className="sect4--grid">
+          {currentCourse?.displayComponent?.skills_covered.map((skill)=>{
+            return(
+              <p>
+                <span>
+                  <FaCheckCircle />
+                </span>
+                {skill}
+              </p>
+            )
+          })}
         </div>
+        <br />
         <h1>Tools Covered</h1>
-        <div>
+        <br />
+        <br />
+        <div className="toolsCovered">
           <img src="" alt="" />
           <img src="" alt="" />
           <img src="" alt="" />
@@ -225,72 +252,108 @@ const CoursePricing = () => {
           <img src="" alt="" />
         </div>
       </section>
-      <section>
-        <h2>React JS Certification Training Course Curriculum</h2>
+      <section className="sect5">
+        <h2>{currentCourse.courseName} Certification Training Course Curriculum</h2>
+        <br />
         <h1>
-          Curriculum Designes by Experts <span>Download Curriculum</span>
+          Curriculum Designed by Experts
         </h1>
-        <div>
-          <div className="drop_down topic">
-            <p>Introduction to Web Development and React</p>
-            <div>
-              <span>12 topics</span>
-              <span>^</span>
+        <br />
+        <br />
+        <div className="sect5--topicsCont">
+          {
+            currentCourse?.displayComponent?.curriculum.map((curriculum_topic)=>{
+              return(
+                <div
+            onClick={() => setPage(currentCourse?.displayComponent?.curriculum.indexOf(curriculum_topic))}
+            className={
+              currentPage !== currentCourse?.displayComponent?.curriculum.indexOf(curriculum_topic) ? "drop_down" : "drop_down activeContent"
+            }
+          >
+            <div className="drop_down--header topic">
+              <p>{curriculum_topic.title}</p>
+              <div>
+                <span className="topic--no">{curriculum_topic.no_of_topics} topics</span>
+                <span
+                  className={`rotate ${
+                    currentPage === currentCourse?.displayComponent?.curriculum.indexOf(curriculum_topic) && "rotate-active"
+                  }`}
+                >
+                  <MdOutlineKeyboardArrowDown />
+                </span>
+              </div>
+            </div>
+            <div className="drop_down--content">
+              <br />
+              <h2>Topics</h2>
+              <br />
+              <ul>
+                {curriculum_topic?.topic_list.map((topic_list)=>{
+                  return(
+                    <li>{topic_list}</li>
+                  )
+                })}
+              </ul>
             </div>
           </div>
-          <div className="drop_down topic">
-            <p>Introduction to Web Development and React</p>
-            <div>
-              <span>12 topics</span>
-              <span>^</span>
-            </div>
-          </div>
-          <div className="drop_down topic">
-            <p>Introduction to Web Development and React</p>
-            <div>
-              <span>12 topics</span>
-              <span>^</span>
-            </div>
-          </div>
-          <div className="drop_down topic">
-            <p>Introduction to Web Development and React</p>
-            <div>
-              <span>12 topics</span>
-              <span>^</span>
-            </div>
-          </div>
-          <div className="drop_down topic">
-            <p>Introduction to Web Development and React</p>
-            <div>
-              <span>12 topics</span>
-              <span>^</span>
-            </div>
-          </div>
-          <button>View Less</button>
+              )
+            })
+          }
+          <button>View More</button>
         </div>
       </section>
-      <section>
-        <h1>React Certification Course Description</h1>
-        <div className="drop_down">
-          <p>About React Course</p>
-          <p>About React Course</p>
-          <p>About React Course</p>
-          <p>About React Course</p>
-          <p>About React Course</p>
-          <p>About React Course</p>
-          <p>About React Course</p>
+      <section className="sect6">
+        <h1>{currentCourse.courseName} Certification Course Description</h1>
+        <br />
+        <br />
+        <div>
+          <div className="sect6--descCont">
+            { currentCourse?.displayComponent?.course_description.map((description)=>{
+              return(
+                <div
+              onClick={() => setDesc(currentCourse?.displayComponent?.course_description.indexOf(description))}
+              className={
+                currentDesc !== currentCourse?.displayComponent?.course_description.indexOf(description) ? "drop_down" : "drop_down activeContent"
+              }
+            >
+              <div className="drop_down--header topic">
+                <p>{description.title}</p>
+                <div>
+                  <span
+                    className={`rotate ${
+                      currentDesc === currentCourse?.displayComponent?.course_description.indexOf(description) && "rotate-active"
+                    }`}
+                  >
+                    <MdOutlineKeyboardArrowDown />
+                  </span>
+                </div>
+              </div>
+              <div className="drop_down--content">
+                <p>{description.content}</p>
+              </div>
+            </div>
+              )
+            })}
+            <button>View More</button>
+          </div>
         </div>
       </section>
-      <section>
-        <h1>React Certification Training Course Projects</h1>
-        <div>
-          <div className="project">
+      <section className="sect7">
+        <h2>React Certification Training Course Projects</h2>
+        <br />
+        <br />
+        <div className="sect7--gridCont">
+          {currentCourse?.displayComponent?.projects.map((project)=>{
+            return(
+              <div className="project">
             <div>
-              <img src="" alt="" />
+              <img src={project.image} alt="" />
             </div>
-            <h1>Industry: Entertainment</h1>
-            <p></p>
+            <h1>Industry: {project.industry}</h1>
+            <p>{project.content}</p>
           </div>
+            )
+          })}
         </div>
       </section>
     </div>

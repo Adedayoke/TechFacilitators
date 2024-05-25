@@ -3,7 +3,7 @@ import Button from "./Button";
 import PositionIndicator from "./PositionIndicator";
 import logo from "../assets/logo.png"
 import { PageContext } from "../context/PageContext";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -40,22 +40,22 @@ const Navbar = () => {
         <PositionIndicator scrollPosition={indicatorPosition} />
 
         <div className="logoImg">
-          <Link to="/">
+          <NavLink to="/">
             <img src={logo} alt="" />
-          </Link>
+          </NavLink>
         </div>
         <ul>
           <li>
-            <Link to="/profile">LevelUp</Link>
+            <NavLink to="/profile">LevelUp</NavLink>
           </li>
           <li>
-            <Link to="/courses">Courses</Link>
+            <NavLink to="/courses">Courses</NavLink>
           </li>
           <li>
-            <Link to="/pricing">Take a Test</Link>
+            <NavLink to="/pricing">Take a Test</NavLink>
           </li>
           <li>
-            <Link to="/contact">Job Offers</Link>
+            <NavLink to="/contact">Job Offers</NavLink>
           </li>
         </ul>
         <div className="buttons">
