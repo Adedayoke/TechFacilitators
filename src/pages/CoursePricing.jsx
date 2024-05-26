@@ -15,8 +15,12 @@ const CoursePricing = () => {
   const [currentPage, setCurrentPage] = useState(-1);
   const [currentDesc, setCurrentDesc] = useState(-1);
   const [currentDesign, setCurrentDesign] = useState("");
+  const [startCurriculumView, setstartCurriculumView] = useState(0);
+  const [startDescriptionView, setstartDescriptionView] = useState(0);
+  const currentCourse = allCourses.find((item)=> item.id === id);
+  const [curriculum_view, setcurriculum_view] = useState(0);
+  const [description_view, setdescription_view] = useState(0);
   const setPage = (page) => {
-    console.log(page);
     if (page !== currentPage) {
       setCurrentPage(page);
     } else {
@@ -33,12 +37,35 @@ const CoursePricing = () => {
   const setDesign = (design) => {
       setCurrentDesign(design);
   };
-  const currentCourse = allCourses.find((item)=> item.id === id)
-  useEffect(()=>{
+  const setViewMoreCurriculum = (view)=>{
 
-    setCurrentDesign(currentCourse?.displayComponent?.related_courses[0]?.name)
+  setstartCurriculumView(view);
+  setcurriculum_view(currentCourse?.displayComponent?.curriculum.length);
+  }
+  const setViewMoreDescription = (view)=>{
+
+    setstartDescriptionView(view);
+    setdescription_view(currentCourse?.displayComponent?.course_description.length);
+  }
+  const setViewLessCurriculum = ()=>{
+
+  setstartCurriculumView(0);
+  setcurriculum_view(Math.round(currentCourse?.displayComponent?.curriculum?.length / 2));
+  }
+  const setViewLessDescription = ()=>{
+
+    setstartDescriptionView(0);
+    setdescription_view(Math.round(currentCourse?.displayComponent?.course_description?.length / 2));
+  }
+  useEffect(()=>{
+    // setAllCurriculum(currentCourse?.displayComponent?.curriculum);
+    setCurrentDesign(currentCourse?.displayComponent?.related_courses[0]?.name);
+    setcurriculum_view(Math.round(currentCourse?.displayComponent?.curriculum?.length / 2));
+    setdescription_view(Math.round(currentCourse?.displayComponent?.course_description?.length / 2));
+    
   }, [id])
-  
+  console.log(curriculum_view)
+  console.log(startCurriculumView)
   return (
     <div className="course_pricing">
       <div className="course_pricing--header">
@@ -132,7 +159,7 @@ const CoursePricing = () => {
             </div>
           </div>
           <div className="sect2--body-footer">
-            <h2>Want to become a {currentCourse?.jobtitle}</h2>
+            <h2>Want to become a {currentCourse?.jobtitle}?</h2>
             <button>Enroll Now</button>
           </div>
         </div>
@@ -245,11 +272,15 @@ const CoursePricing = () => {
         <br />
         <br />
         <div className="toolsCovered">
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
+          <ul>
+            {currentCourse?.displayComponent?.tools_covered.map((tool)=>{
+              return(
+                <li>
+              <img src={tool} alt="" />
+            </li>
+              )
+            })}
+          </ul>
         </div>
       </section>
       <section className="sect5">
@@ -262,7 +293,7 @@ const CoursePricing = () => {
         <br />
         <div className="sect5--topicsCont">
           {
-            currentCourse?.displayComponent?.curriculum.map((curriculum_topic)=>{
+            currentCourse?.displayComponent?.curriculum.slice(startCurriculumView, curriculum_view).map((curriculum_topic)=>{
               return(
                 <div
             onClick={() => setPage(currentCourse?.displayComponent?.curriculum.indexOf(curriculum_topic))}
@@ -299,7 +330,11 @@ const CoursePricing = () => {
               )
             })
           }
-          <button>View More</button>
+          {
+          startCurriculumView === 0?
+            <button onClick={()=>setViewMoreCurriculum(curriculum_view)}>View More</button>:
+            <button onClick={()=>setViewLessCurriculum()}>View Less</button>
+          }
         </div>
       </section>
       <section className="sect6">
@@ -308,7 +343,7 @@ const CoursePricing = () => {
         <br />
         <div>
           <div className="sect6--descCont">
-            { currentCourse?.displayComponent?.course_description.map((description)=>{
+            { currentCourse?.displayComponent?.course_description.slice(startDescriptionView, description_view).map((description)=>{
               return(
                 <div
               onClick={() => setDesc(currentCourse?.displayComponent?.course_description.indexOf(description))}
@@ -334,7 +369,11 @@ const CoursePricing = () => {
             </div>
               )
             })}
-            <button>View More</button>
+            {
+          startDescriptionView === 0?
+            <button onClick={()=>setViewMoreDescription(description_view)}>View More</button>:
+            <button onClick={()=>setViewLessDescription()}>View Less</button>
+          }
           </div>
         </div>
       </section>

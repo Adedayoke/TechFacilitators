@@ -392,7 +392,8 @@ export const allCourses = [
     }
   },
   {
-    courseName: "Cyber Security and Ethical Hacking Complete Course",
+    courseName: "Cyber Security and Ethical Hacking",
+    jobtitle: "Cyber Security expert",
     id: "cyber",
     cardComponent: {
       content: [
@@ -451,8 +452,8 @@ export const allCourses = [
             }
         ],
         training_benefits: "A certified cybersecurity expert garners trust from renowned Fortune 500 companies like IBM, Microsoft, Cisco, and others. NASSCOM reports that India demands 77,000 ethical hackers annually, yet the job market can only satisfy 15,000. This high demand underscores ethical hacking as an exceptionally coveted and promising profession presently.",
-        tools_covered: ["Vulnerability analysis", "Reconnaissance and information gathering", "Web Application Security", "Penetration Testing", "Network Security", "IDS, FIrewalls, and Honeypots"],
-        skills_covered: ["React Components", "React React State Management", "React Event Handling", "Routing in React", "React Application Testing", "React Native"],
+        skills_covered: ["Vulnerability analysis", "Reconnaissance and information gathering", "Web Application Security", "Penetration Testing", "Network Security", "IDS, FIrewalls, and Honeypots"],
+        tools_covered: [],
         curriculum: [
             {
                 title: "Introduction to Web Development and React",
@@ -626,22 +627,22 @@ export const allCourses = [
         related_courses: [
             {
                 name: "Front-end Engineer",
-                image1: "",
-                image2: ""
+                image1: "	https://d1jnx9ba8s6j9r.cloudfront.net/img/annual_salary_image2_884_2_1664876617.png",
+                image2: "https://d1jnx9ba8s6j9r.cloudfront.net/img/designation_multi_section_image_884_0_1664876617.png"
             },
             {
                 name: "React Developer",
-                image1: "",
-                image2: ""
+                image1: "https://d1jnx9ba8s6j9r.cloudfront.net/img/annual_salary_image2_884_2_1664876887.png",
+                image2: "https://d1jnx9ba8s6j9r.cloudfront.net/img/designation_multi_section_image_884_0_1664876886.png"
             },
             {
                 name: "Front-end Developer",
-                image1: "",
-                image2: ""
+                image1: "https://d1jnx9ba8s6j9r.cloudfront.net/img/annual_salary_image2_884_2_1664876363.png",
+                image2: "https://d1jnx9ba8s6j9r.cloudfront.net/img/designation_multi_section_image_884_0_1664876363.png"
             }
         ],
         training_benefits: "React development stands out as the future of web creation, offering unparalleled versatility and simplicity. According to a Statista study, React JS reigns as the most sought-after web framework in 2022, with 40.41% of global software developers opting for it in their web application development. This trend isn't unexpected, given the steady rise in demand for React developers in recent years. Mastering React not only expands job opportunities and enhances pay prospects but also connects you with a vast and supportive community.",
-        tools_covered: [],
+        tools_covered: ["https://d1jnx9ba8s6j9r.cloudfront.net/img/multi_section_image_884_0_1664878005.png", "	https://d1jnx9ba8s6j9r.cloudfront.net/img/multi_section_image_884_1_1664878005.png", "https://d1jnx9ba8s6j9r.cloudfront.net/img/multi_section_image_884_2_1664878005.png", "https://d1jnx9ba8s6j9r.cloudfront.net/img/multi_section_image_884_3_1664878005.png", "https://d1jnx9ba8s6j9r.cloudfront.net/img/multi_section_image_884_4_1664878005.png", "https://d1jnx9ba8s6j9r.cloudfront.net/img/multi_section_image_884_5_1664878005.png", "https://d1jnx9ba8s6j9r.cloudfront.net/img/multi_section_image_884_6_1664878005.png", "https://d1jnx9ba8s6j9r.cloudfront.net/img/multi_section_image_884_7_1664878005.png"],
         skills_covered: ["React Components", "React React State Management", "React Event Handling", "Routing in React", "React Application Testing", "React Native"],
         curriculum: [
             {
